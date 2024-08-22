@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Employee</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center fw-bold m-2">Update Employee</h2>
+        <hr>
+    <form th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="row">
+            
+            <div class="col-md-4">
+        <label>Name:</label>
+        <input type="text" class="form-control form-control-sm" th:field="*{name}" required/>
+        <br/>
+    </div>
+    <div class="col-md-4">
+        <label>Email:</label>
+        <input type="email" class="form-control form-control-sm" th:field="*{email}" required/>
+        <br/>
+    </div>
+    <div class="col-md-4">
+        <label>Department:</label>
+        <input type="text" class="form-control form-control-sm" th:field="*{department}" required/>
+        <br/>
+    </div>
+            </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary btn-sm me-2">Save</button>
+            <a href="/" class="btn btn-secondary btn-sm">Back to List</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
